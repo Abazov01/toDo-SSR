@@ -1,0 +1,20 @@
+<% for(i in todos) {%>
+<section class="card">
+  <div class="card__name"><%= todos[i].name %></div>
+  <div card__btns>
+    <a href="/detail/<%= todos[i].id %>"><button>&#9776;</button></a>
+
+    <button onclick="openModal('<%= todos[i].id %>')">&#9998;</button>
+
+    <%if(todos[i].status == 'new'){%>
+    <button onclick="done('<%= todos[i].id %>')">&#9745;</button>
+    <%}else if(todos[i].status == 'proccess'){%>
+    <button onclick="done('<%= todos[i].id %>')">&#9203;</button>
+    <%}else {%>
+    <button onclick="done('<%= todos[i].id %>')">&#9989;</button>
+    <%}%>
+
+    <button onclick="deleteTodo('<%= todos[i].id %>')">&#10060;</button>
+  </div>
+</section>
+<%}%> <% console.log(todos)%>

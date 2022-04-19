@@ -1,0 +1,27 @@
+<% if(todo){%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <%- include('./components/header.ejs')%>
+    <div class="detail__wrapper">
+      <h1 class="name"><%= todo.name%></h1>
+      <p class="date">
+        <%= todo.date.date[0]%>.<%= todo.date.date[1]%>.<%= todo.date.date[2]%>г
+      </p>
+      <p><%= todo.date.time[0]%>:<%=todo.date.time[1] %></p>
+      <p class="status"><%= todo.status%></p>
+    </div>
+
+    <a href="/" class="back"> &larr;</a>
+  </body>
+</html>
+<%}else{%>
+<h1>WooP's</h1>
+<%}%>
